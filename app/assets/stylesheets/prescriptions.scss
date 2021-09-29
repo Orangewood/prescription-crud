@@ -1,0 +1,29 @@
+// Place all the styles related to the Prescriptions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  img{
+    width: 7%;
+    height: 10%;
+  }
+}
+
+.prescriptions {
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    width: auto;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:hover {
+    background-color: #ddd;
+  }
+}
