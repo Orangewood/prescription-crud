@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 120.times do |n| 
-    name = Faker::Name.name
+    name = Faker::Lorem.word
     dosage = "#{Faker::Number.decimal(l_digits: 2)} #{Faker::Measurement.metric_weight}"
     Prescription.create!(
         name: name, 
@@ -17,7 +17,7 @@ end
 
 prescriptions = Prescription.order(:created_at).take(30)
 12.times do 
-    store = Faker::Lorem.words
+    store = Faker::Lorem.word
     address = "#{Faker::Address.building_number} #{Faker::Address.street_name}"
     price = Faker::Number.decimal(l_digits: 2)
     prescriptions.each { |prescription| prescription.stores.create!(
