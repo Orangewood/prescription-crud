@@ -14,3 +14,15 @@
         dosage: dosage
     )
 end
+
+prescriptions = Prescription.order(:created_at).take(30)
+12.times do 
+    store = Faker::Lorem.words
+    address = "#{Faker::Address.building_number} #{Faker::Address.street_name}"
+    price = Faker::Number.decimal(l_digits: 2)
+    prescriptions.each { |prescription| prescription.stores.create!(
+     store: store,
+     address: address, 
+     price: price   
+    )}
+end
